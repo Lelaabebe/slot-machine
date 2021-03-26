@@ -1,0 +1,76 @@
+package com.company;
+import java.until.scanner;
+import java.until.Random;
+
+public class Main{
+
+  private static int winnings = 0;
+  private static int spins = 0;
+  
+  pub static void main (String[] args) {
+  
+     Spin();
+     
+     
+  }
+  public static void Spin() {
+      Random spin = new Random ();
+      spins++;
+      int slot1 = spin.next.Int(bound:10);
+      int slot2 = spin.next.Int(bound:10);
+      int slot3 = spin.next.Int(bound:10);
+      
+      
+      if (slot1 == slot2 && slot2 == slot2) {
+          winnings += 100;
+      } else if (slot1 == slot2 || slot1 == slot3) { 
+        winnings +=25;
+      } else {
+          winnings -= 15;
+      }
+      System.out.println("Slot 1 : " + slot1);
+      System.out.println("Slot 2 : " + slot2);
+      System.out.println("Slot 3 : " + slot3);
+      
+      System.out.print("Do you want to continue playing? Press Y to spin again, Press N to stop:");
+      EnterAgain();
+      
+ }
+ public static void EnterAgain(){
+    Scanner scanner = new scanner(System.in);
+    
+    string answer = scanner.nextLine();
+    
+    switch(answer){
+        case "Y":
+           break; 
+        case "N":
+             if(winnings > 0) {
+                 System.out.println("You have won: $" + winnings + "!");
+             }else if(winnings<0){
+                  System.out.println("You have lost: $" + (winnings*-1)+"!");
+             }else {
+                   System.out.println("You have noy lost or won any money");
+             }
+             return;
+        default: 
+             System.out.println("Incorrect input, press Y to spin again, press N to stop:");
+             EnterAgain();
+    }
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+      
+      
+      
+      
+      
+      
+      
